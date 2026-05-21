@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: #0a0a0b; color: #e6e6ea; }
+
+* { -webkit-font-smoothing: antialiased; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #22222a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #2d2d36; }
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium transition;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-glow;
+  }
+  .btn-ghost {
+    @apply btn bg-bg-elev text-ink hover:bg-bg-line border border-bg-line;
+  }
+  .btn-danger {
+    @apply btn bg-transparent text-bad hover:bg-bad/10 border border-bad/30;
+  }
+  .card {
+    @apply rounded-lg border border-bg-line bg-bg-panel;
+  }
+  .input {
+    @apply w-full rounded-md border border-bg-line bg-bg-base px-3 py-2 text-sm text-ink placeholder:text-ink-dim focus:border-accent focus:outline-none;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-bg-line bg-bg-elev px-2 py-0.5 text-xs text-ink-muted;
+  }
+  .label {
+    @apply text-xs font-medium uppercase tracking-wider text-ink-muted;
+  }
+}
+
+/* Simple prose styling for assistant markdown output */
+.prose-mini h1 { @apply text-xl font-semibold mt-4 mb-2; }
+.prose-mini h2 { @apply text-lg font-semibold mt-4 mb-2; }
+.prose-mini h3 { @apply text-base font-semibold mt-3 mb-1.5; }
+.prose-mini p { @apply my-2 leading-relaxed; }
+.prose-mini ul { @apply list-disc pl-5 my-2; }
+.prose-mini ol { @apply list-decimal pl-5 my-2; }
+.prose-mini li { @apply my-1; }
+.prose-mini code { @apply rounded bg-bg-elev px-1 py-0.5 text-xs; }
+.prose-mini pre { @apply rounded-md bg-bg-base border border-bg-line p-3 my-2 overflow-x-auto text-xs; }
+.prose-mini pre code { @apply bg-transparent p-0; }
+.prose-mini a { @apply text-accent-glow underline; }
+.prose-mini blockquote { @apply border-l-2 border-bg-line pl-3 my-2 text-ink-muted; }
+.prose-mini strong { @apply text-ink; }
+.prose-mini hr { @apply border-bg-line my-4; }
+
+.citation {
+  @apply inline-flex items-center justify-center align-middle text-[10px] font-semibold rounded bg-accent/20 text-accent-glow px-1.5 py-0.5 mx-0.5 cursor-pointer hover:bg-accent/40 transition;
+}
